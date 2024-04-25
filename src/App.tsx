@@ -16,25 +16,26 @@ const App = () => {
 
   useEffect(() => {
     fetch(url, options)
-    .then(res => {
-      if (!res.ok) {
-        throw new Error("Too Many Requests");
-      }
-      
-      return res.json()
-    })
-    .then(data => {
-      for (let i = 0; i < data.length; i++) {
-        setLx(lx + data[i].embed + '<br />')
-      }
-    })
+      .then(res => {
+        if (!res.ok) {
+          throw new Error("Too Many Requests");
+        }
+        return res.json()
+      })
+      .then(data => {
+        let htmlString = '';
+        for (let i = 0; i < 2; i++) {
+          htmlString += data[i].embed + '<br />';
+        }
+        setLx(htmlString);
+      })
   }, [])
 
-  return (
-    <ul>
-      {lx}
-    </ul>
-  )
+  if (lx !== '') {
+    return (
+      <div dangerouslySetInnerHTML={{ __html: lx }} />
+    )
+  }
 }
 
 export default App
