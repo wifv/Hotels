@@ -20,14 +20,14 @@ body {
           align-items: center;
 }
 
-.container {
+.container-nav {
   position: sticky;
   top: 0;
   max-width: 1920px;
   width: 100%;
   padding: 20px 0;
   z-index: 10;
-  background-color: #FAFAFA;
+  background-color: #f9f9f9;
 }
 
 .nav {
@@ -54,43 +54,4 @@ body {
 
 * {
   color: black;
-}
-
-.menu {
-  width: 40px;
-  display: none;
-}
-
-@media (max-width: 600px) {
-  .container {
-  }
-  .nav {
-    overflow: hidden;
-  }
-  .nav-right {
-    display: none !important;
-  }
-  .menu {
-    display: block;
-  }
-  .nav ul li {
-    border-bottom: none;
-  }
-}
-
-.active-nav-right {
-  position: absolute;
-  flex-direction: column;
-  left: 0;
-  top: 58px;
-  padding-top: 12px;
-  background-color: #FAFAFA;
-  z-index: 2;
-  width: 100%;
-  padding-bottom: 20px;
-  gap: 0 !important;
-
-  li {
-    padding: 20px 0;
-  }
 }

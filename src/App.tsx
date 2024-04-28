@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { JSX } from 'react/jsx-runtime';
+import './assets/css/app.css'
+import './assets/css/global.css'
 
 const App = () => {
 
@@ -24,8 +26,8 @@ const App = () => {
       })
       .then(data => {
         let htmlString = '';
-        for (let i = 0; i < 2; i++) {
-          htmlString += data[i].embed + '<br />';
+        for (let i = 0; i < 8; i++) {
+          htmlString += data[i].embed;  
         }
         setLx(htmlString);
       })
@@ -33,7 +35,9 @@ const App = () => {
 
   if (lx !== '') {
     return (
-      <div dangerouslySetInnerHTML={{ __html: lx }} />
+      <main className='container'>
+        <div dangerouslySetInnerHTML={{ __html: lx }} className='video'/>
+      </main>
     )
   }
 }
