@@ -1,5 +1,5 @@
 .container {
-  padding: 0 20px;
+  padding: 0 20px 60px 20px;
   background-color: #f9f9f9;
 }
 
@@ -11,4 +11,16 @@
 
 .video > div {
   border-radius: 10px;
+}
+
+.button {
+  width: 100px;
+  height: 50px;
+  margin: 10px auto 10px auto;
+  border-radius: 20px;
+  border: 2px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }

@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import { JSX } from 'react/jsx-runtime';
+import { useEffect, useState } from 'react'
 import './assets/css/app.css'
 import './assets/css/global.css'
 
@@ -15,32 +14,34 @@ const App = () => {
   };
   
   const [lx, setLx] = useState('')
+  const [n, setN] = useState(10)
 
   useEffect(() => {
     fetch(url, options)
-      .then(res => {
-        if (!res.ok) {
-          throw new Error("Too Many Requests");
-        }
-        return res.json()
-      })
-      .then(data => {
-        let htmlString = '';
-        for (let i = 0; i < 8; i++) {
-          htmlString += data[i].embed;  
-        }
-        setLx(htmlString);
-      })
-  }, [])
+    .then(res => {
+      if (!res.ok) {
+        throw new Error("Too Many Requests");
+      }
+      return res.json()
+    })
+    .then(data => {
+      let htmlString = '';
+      let a = lx;
+      for (let i = n-10; i < n; i++) {
+        htmlString += data[i].embed;
+      }
+      setLx(a + htmlString);
+    })
+  }, [n]) // fetchInfo will be called whenever 'n' changes
 
   if (lx !== '') {
     return (
       <main className='container'>
         <div dangerouslySetInnerHTML={{ __html: lx }} className='video'/>
+        <div className="button" onClick={() => setN(n+10)}>See More</div>
       </main>
     )
   }
 }
 
 export default App
-

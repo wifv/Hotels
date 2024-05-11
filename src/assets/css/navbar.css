@@ -55,3 +55,16 @@ body {
 * {
   color: black;
 }
+
+.theme {
+  max-width: 30px;
+}
+
+.nav-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
