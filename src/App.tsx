@@ -1,8 +1,13 @@
-import { useEffect, useState } from 'react'
+import { FormEventHandler, useEffect, useState } from 'react'
 import './assets/css/app.css'
 import './assets/css/global.css'
+import Searchbar from './assets/pages/Searchbar';
+import SearchbarResults from './assets/pages/SearchbarResults';
 
 const App = () => {
+
+  const [results, setResults] = useState([])
+
 
   const url = 'https://free-football-soccer-videos.p.rapidapi.com/';
   const options = {
@@ -31,13 +36,16 @@ const App = () => {
         htmlString += data[i].embed;
       }
       setLx(a + htmlString);
+      // console.log(data)
     })
   }, [n]) // fetchInfo will be called whenever 'n' changes
 
   if (lx !== '') {
     return (
       <main className='container'>
-        <div dangerouslySetInnerHTML={{ __html: lx }} className='video'/>
+        <Searchbar setResults={setResults}/>
+        <SearchbarResults results={results}/>
+        <div dangerouslySetInnerHTML={{ __html: lx }} className='video' id="items"/>
         <div className="button" onClick={() => setN(n+10)}>See More</div>
       </main>
     )
