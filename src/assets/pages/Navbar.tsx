@@ -1,18 +1,18 @@
-// import { useState } from 'react'
+import { useState } from 'react'
 import '../css/navbar.css'
-// import theme from '../theme.svg'
+import '../css/global.css'
+import Theme from './Theme'
 
-const Navbar = () => {
-  // const [dark, setDark] = useState(false)
+const Navbar = ({setTheme}: any, {dark}: any) => {
 
   return (
-    // <div className={dark ? "dark container-nav" : "light container-nav"}>
-    <div className="container-nav">
+    <div className={dark ? "dark container-nav" : "light container-nav"}>
+    {/* <div className="container-nav"> */}
       <nav className="nav">
           <a className="logo" href='/'>Davlet kak dela</a>
           <ul className="nav-right" id='nav-right'>
             <li className="nav-item"><a href='/about'>About</a></li>
-            {/* <img src={theme} alt="theme" className="nav-item theme" onClick={setDark(!dark)}/> */}
+            <Theme setTheme={setTheme} dark={dark}/>
           </ul>
       </nav>
     </div>

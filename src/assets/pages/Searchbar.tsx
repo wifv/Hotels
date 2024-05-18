@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
+import '../css/searchbar.css'
 
 const Searchbar = ({setResults}: any) => {
   const [input, setInput] = useState('')
@@ -29,7 +30,7 @@ const Searchbar = ({setResults}: any) => {
   console.log(input)
   return (
     <div>
-      <input type="text" id='search' value={input} onChange={e => {handleChange(e.target.value)}}/>
+      <input type="text" id='search' placeholder='Search' value={input} onChange={e => {handleChange(e.target.value)}}/>
     </div>
   )
 }

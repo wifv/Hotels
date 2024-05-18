@@ -7,9 +7,17 @@ textarea {
 }
 
 .dark {
-  background-color: #151515;
+  background-color: #313131 !important;
+}
+
+.dark * {
+  color: white !important;
 }
 
 .light {
-  background-color: #f9f9f9;
+  background-color: #f9f9f9 !important;
+}
+
+.light * {
+  color: black !important;
 }

@@ -1,6 +1,11 @@
+// import { useState } from "react";
+
 const clickHandler = (setTheme: any, theme: any) => {
-  return (event: React.MouseEvent) => {
-    setTheme(!theme)
-    event.preventDefault();
-  }
+  setTheme(!theme)
+
+  return (
+    <>a</>
+  )
 }
+
+export default clickHandler;

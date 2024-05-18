@@ -1,6 +1,21 @@
 .results {
   margin-bottom: 100px;
-  max-height: 400px;
-  overflow-y: hidden;
+  max-height: 190px;
+  overflow-y: scroll;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.results-item {
+  font-size: 20px;
+  height: 20px;
 }
