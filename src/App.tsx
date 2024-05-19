@@ -4,13 +4,9 @@ import './assets/css/global.css'
 import Searchbar from './assets/pages/Searchbar';
 import SearchbarResults from './assets/pages/SearchbarResults';
 
-
 const App = () => {
-  
   const [results, setResults] = useState([])
-  const [dark, setTheme] = useState(false)
-
-
+  
   const url = 'https://free-football-soccer-videos.p.rapidapi.com/';
   const options = {
     method: 'GET',
@@ -44,7 +40,7 @@ const App = () => {
 
   if (lx !== '') {
     return (
-      <main className={dark ? 'container dark' : 'container light'}>
+      <main className='container'>
         <Searchbar setResults={setResults}/>
         <SearchbarResults results={results}/>
         <div dangerouslySetInnerHTML={{ __html: lx }} className='video' id="items"/>

@@ -6,9 +6,6 @@ import Navbar from './assets/pages/Navbar.tsx'
 import About from './assets/pages/About.tsx'
 import Footer from './assets/pages/Footer.tsx'
 
-
-
-
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <BrowserRouter>
@@ -19,5 +16,5 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       </Routes>
       <Footer />
     </BrowserRouter>
-  </React.StrictMode>,
+  </React.StrictMode>
 )
