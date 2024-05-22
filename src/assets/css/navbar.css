@@ -68,3 +68,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
 }
+
+.logo img {
+  width: 40px;
+}

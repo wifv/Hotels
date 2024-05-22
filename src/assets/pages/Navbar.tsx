@@ -1,5 +1,6 @@
 import '../css/navbar.css'
 import '../css/global.css'
+import soccerball from '../images/soccerball.svg'
 
 const Navbar = () => {
 
@@ -7,7 +8,7 @@ const Navbar = () => {
     <div className="container-nav">
     {/* <div className="container-nav"> */}
       <nav className="nav">
-          <a className="logo" href='/'>Davlet kak dela</a>
+          <a className="logo" href='/'><img src={soccerball} alt="soccerball, football" /></a>
           <ul className="nav-right" id='nav-right'>
             <li className="nav-item"><a href='/about'>About</a></li>
           </ul>

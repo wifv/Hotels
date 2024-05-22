@@ -17,7 +17,7 @@ const App = () => {
   };
   
   const [lx, setLx] = useState('')
-  const [n, setN] = useState(10)
+  const [n, setN] = useState(12)
 
   useEffect(() => {
     fetch(url, options)
@@ -30,7 +30,7 @@ const App = () => {
     .then(data => {
       let htmlString = '';
       let a = lx;
-      for (let i = n-10; i < n; i++) {
+      for (let i = n-12; i < n; i++) {
         htmlString += data[i].embed;
       }
       setLx(a + htmlString);
@@ -44,7 +44,7 @@ const App = () => {
         <Searchbar setResults={setResults}/>
         <SearchbarResults results={results}/>
         <div dangerouslySetInnerHTML={{ __html: lx }} className='video' id="items"/>
-        <div className="button" onClick={() => setN(n+10)}>See More</div>
+        <div className="button" onClick={() => setN(n+12)}>See More</div>
       </main>
     )
   }
